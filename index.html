@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gudel Wisata Baturaden - Keceriaan Alam Baturaden dalam Satu Destinasi</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'pinus': '#2C5F2D',
+                        'krem': '#F5F5DC',
+                        'kayu': '#8B4513',
+                        'gudel': '#FFD700',
+                        'kabut': '#4A4A4A'
+                    },
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                        'inter': ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="font-inter bg-krem">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center space-x-3">
+                    <div
+                        class="w-12 h-12 rounded-full flex items-center justify-center border-2 border-green-800 overflow-hidden">
+                        <img src="src/images/logo.png" alt="Gudel Logo" class="w-full h-full object-cover">
+                    </div>
+                    <div>
+                        <h1 class="font-poppins font-bold text-xl text-pinus">Gudel Wisata</h1>
+                        <p class="text-sm text-kabut">Baturaden</p>
+                    </div>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden lg:flex items-center space-x-8">
+                    <a href="index.html" class="text-pinus font-medium border-b-2 border-pinus">Beranda</a>
+                    <div class="relative group">
+                        <button class="text-kabut hover:text-pinus font-medium flex items-center">
+                            Akomodasi
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div
+                            class="absolute top-full left-0 w-48 bg-white shadow-lg rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 mt-2">
+                            <a href="homestay.html"
+                                class="block px-4 py-3 text-kabut hover:text-pinus hover:bg-krem">Homestay</a>
+                            <a href="camping.html"
+                                class="block px-4 py-3 text-kabut hover:text-pinus hover:bg-krem">Camping</a>
+                        </div>
+                    </div>
+                    <a href="aktivitas.html" class="text-kabut hover:text-pinus font-medium">Aktivitas</a>
+                    <a href="fasilitas.html" class="text-kabut hover:text-pinus font-medium">Fasilitas Lain</a>
+                    <a href="galeri.html" class="text-kabut hover:text-pinus font-medium">Galeri</a>
+                    <a href="kontak.html" class="text-kabut hover:text-pinus font-medium">Kontak & Promo</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="lg:hidden" onclick="toggleMobileMenu()">
+                    <svg class="w-6 h-6 text-pinus" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobileMenu" class="lg:hidden hidden pb-4">
+                <a href="index.html" class="block py-2 text-pinus font-medium border-l-4 border-pinus pl-4">Beranda</a>
+                <div class="py-2">
+                    <button onclick="toggleSubmenu()"
+                        class="flex items-center justify-between w-full text-kabut hover:text-pinus font-medium pl-4">
+                        Akomodasi
+                        <svg class="w-4 h-4 mr-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
+                    </button>
+                    <div id="submenu" class="hidden pl-8 pt-2">
+                        <a href="homestay.html" class="block py-2 text-kabut hover:text-pinus">Homestay</a>
+                        <a href="camping.html" class="block py-2 text-kabut hover:text-pinus">Camping</a>
+                    </div>
+                </div>
+                <a href="aktivitas.html" class="block py-2 text-kabut hover:text-pinus font-medium pl-4">Aktivitas</a>
+                <a href="fasilitas.html" class="block py-2 text-kabut hover:text-pinus font-medium pl-4">Fasilitas
+                    Lain</a>
+                <a href="galeri.html" class="block py-2 text-kabut hover:text-pinus font-medium pl-4">Galeri</a>
+                <a href="kontak.html" class="block py-2 text-kabut hover:text-pinus font-medium pl-4">Kontak & Promo</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative h-screen bg-gradient-to-b from-pinus/20 to-pinus/5">
+        <div class="absolute inset-0 bg-black/30"></div>
+        <div class="relative z-10 container mx-auto px-4 h-full flex items-center">
+            <div class="max-w-2xl text-white">
+                <h1 class="font-poppins font-bold text-5xl lg:text-6xl mb-6 leading-tight">
+                    Keceriaan Alam Baturaden dalam Satu Destinasi
+                </h1>
+                <p class="text-xl mb-8 leading-relaxed">
+                    Nikmati pengalaman wisata tak terlupakan bersama gudel, pemandangan alam
+                    spektakuler, dan fasilitas lengkap untuk keluarga.
+                </p>
+                <a href="homestay.html"
+                    class="bg-gudel text-pinus font-poppins font-semibold px-8 py-4 rounded-full text-lg hover:bg-yellow-300 transition-colors duration-300 inline-block">
+                    Lihat Akomodasi
+                </a>
+            </div>
+        </div>
+        <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('src/images/hero.png')"></div>
+    </section>
+
+    <!-- Layanan Utama -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="font-poppins font-bold text-4xl text-pinus mb-4">Layanan Kami</h2>
+                <p class="text-xl text-kabut max-w-2xl mx-auto">Temukan berbagai pilihan akomodasi dan aktivitas seru
+                    untuk liburan sempurna Anda</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div
+                    class="group bg-krem rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:transform hover:scale-105">
+                    <div class="h-64 bg-cover bg-center"
+                        style="background-image: url('src/images/homestay.png')">
+                    </div>
+                    <div class="p-8">
+                        <h3 class="font-poppins font-bold text-2xl text-pinus mb-4">Homestay</h3>
+                        <p class="text-kabut mb-6">Menginap nyaman dengan berbagai pilihan homestay yang dilengkapi
+                            fasilitas lengkap dan pemandangan alam yang menakjubkan.</p>
+                        <a href="homestay.html" class="text-pinus font-semibold hover:text-kayu transition-colors">Lihat
+                            Detail →</a>
+                    </div>
+                </div>
+
+                <div
+                    class="group bg-krem rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:transform hover:scale-105">
+                    <div class="h-64 bg-cover bg-center" style="background-image: url('src/images/hero.png')">
+                    </div>
+                    <div class="p-8">
+                        <h3 class="font-poppins font-bold text-2xl text-pinus mb-4">Camping</h3>
+                        <p class="text-kabut mb-6">Rasakan pengalaman berkemah yang tak terlupakan dengan paket lengkap
+                            dan spot terbaik di tengah alam Baturaden.</p>
+                        <a href="camping.html" class="text-pinus font-semibold hover:text-kayu transition-colors">Lihat
+                            Detail →</a>
+                    </div>
+                </div>
+
+                <div
+                    class="group bg-krem rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:transform hover:scale-105">
+                    <div class="h-64 bg-cover bg-center" style="background-image: url('src/images/aktivitas.png')">
+                    </div>
+                    <div class="p-8">
+                        <h3 class="font-poppins font-bold text-2xl text-pinus mb-4">Aktivitas Seru</h3>
+                        <p class="text-kabut mb-6">Nikmati gudel dan berbagai aktivitas menarik
+                            yang cocok untuk segala usia.</p>
+                        <a href="aktivitas.html"
+                            class="text-pinus font-semibold hover:text-kayu transition-colors">Lihat Detail →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mengapa Kami -->
+    <section class="py-20 bg-pinus text-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="font-poppins font-bold text-4xl mb-4">Mengapa Memilih Kami?</h2>
+                <p class="text-xl opacity-90 max-w-2xl mx-auto">Pengalaman wisata yang tak terlupakan dengan keunikan
+                    yang tidak akan Anda temukan di tempat lain</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center group">
+                    <div
+                        class="w-20 h-20 bg-gudel rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <svg class="w-10 h-10 text-pinus" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
+                            <path fill-rule="evenodd"
+                                d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </div>
+                    <h3 class="font-poppins font-bold text-xl mb-3">Pemandangan Spektakuler</h3>
+                    <p class="opacity-90">Nikmati keindahan alam Baturaden dengan view pegunungan yang memukau</p>
+                </div>
+
+                <div class="text-center group">
+                    <div
+                        class="w-20 h-20 bg-gudel rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <svg class="w-10 h-10 text-pinus" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </div>
+                    <h3 class="font-poppins font-bold text-xl mb-3">Interaksi Unik dengan Gudel</h3>
+                    <p class="opacity-90">Pengalaman eksklusif gudel yang indah dan
+                        Spektakuler</p>
+                </div>
+
+                <div class="text-center group">
+                    <div
+                        class="w-20 h-20 bg-gudel rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <svg class="w-10 h-10 text-pinus" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd"
+                                d="M3 3a1 1 0 000 2v8a2 2 0 002 2h2.586l-1.293 1.293a1 1 0 101.414 1.414L10 15.414l2.293 2.293a1 1 0 001.414-1.414L12.414 15H15a2 2 0 002-2V5a1 1 0 100-2H3zm11.707 4.707a1 1 0 00-1.414-1.414L10 9.586 8.707 8.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </div>
+                    <h3 class="font-poppins font-bold text-xl mb-3">Fasilitas Terlengkap</h3>
+                    <p class="opacity-90">Semua kebutuhan liburan Anda tersedia dalam satu lokasi yang strategis</p>
+                </div>
+
+                <div class="text-center group">
+                    <div
+                        class="w-20 h-20 bg-gudel rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <svg class="w-10 h-10 text-pinus" fill="currentColor" viewBox="0 0 20 20">
+                            <path
+                                d="M8.433 7.418c.155-.103.346-.196.567-.267v1.698a2.305 2.305 0 01-.567-.267C8.07 8.34 8 8.114 8 8c0-.114.07-.34.433-.582zM11 12.849v-1.698c.22.071.412.164.567.267.364.243.433.468.433.582 0 .114-.07.34-.433.582a2.305 2.305 0 01-.567.267z" />
+                            <path fill-rule="evenodd"
+                                d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-13a1 1 0 10-2 0v.092a4.535 4.535 0 00-1.676.662C6.602 6.234 6 7.009 6 8c0 .99.602 1.765 1.324 2.246.48.32 1.054.545 1.676.662v1.941c-.391-.127-.68-.317-.843-.504a1 1 0 10-1.51 1.31c.562.649 1.413 1.076 2.353 1.253V15a1 1 0 102 0v-.092a4.535 4.535 0 001.676-.662C13.398 13.766 14 12.991 14 12c0-.99-.602-1.765-1.324-2.246A4.535 4.535 0 0011 9.092V7.151c.391.127.68.317.843.504a1 1 0 101.51-1.31c-.562-.649-1.413-1.076-2.353-1.253V5z"
+                                clip-rule="evenodd" />
+                        </svg>
+                    </div>
+                    <h3 class="font-poppins font-bold text-xl mb-3">Harga Bersahabat</h3>
+                    <p class="opacity-90">Nikmati pengalaman premium dengan harga yang terjangkau untuk semua kalangan
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimoni -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="font-poppins font-bold text-4xl text-pinus mb-4">Kata Mereka</h2>
+                <p class="text-xl text-kabut max-w-2xl mx-auto">Pengalaman nyata dari pengunjung yang telah merasakan
+                    keceriaan di Gudel Wisata Baturaden</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-krem p-8 rounded-2xl shadow-lg">
+                    <div class="flex items-center mb-6">
+                        <img src="https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop&crop=face"
+                            alt="Testimoni 1" class="w-16 h-16 rounded-full object-cover mr-4">
+                        <div>
+                            <h4 class="font-poppins font-semibold text-lg text-pinus">Keluarga Santoso</h4>
+                            <p class="text-kabut">Jakarta</p>
+                        </div>
+                    </div>
+                    <p class="text-kabut italic leading-relaxed">"Anak-anak sangat senang bisa berinteraksi langsung
+                        dengan gudel. Homestaynya bersih dan nyaman, pemandangannya juga indah sekali!"</p>
+                </div>
+
+                <div class="bg-krem p-8 rounded-2xl shadow-lg">
+                    <div class="flex items-center mb-6">
+                        <img src="https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop&crop=face"
+                            alt="Testimoni 2" class="w-16 h-16 rounded-full object-cover mr-4">
+                        <div>
+                            <h4 class="font-poppins font-semibold text-lg text-pinus">Komunitas Hiking</h4>
+                            <p class="text-kabut">Bandung</p>
+                        </div>
+                    </div>
+                    <p class="text-kabut italic leading-relaxed">"Spot camping terbaik yang pernah kami kunjungi!
+                        Fasilitasnya lengkap dan pelayanannya sangat ramah. Pasti akan kembali lagi."</p>
+                </div>
+
+                <div class="bg-krem p-8 rounded-2xl shadow-lg">
+                    <div class="flex items-center mb-6">
+                        <img src="https://images.pexels.com/photos/1130626/pexels-photo-1130626.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop&crop=face"
+                            alt="Testimoni 3" class="w-16 h-16 rounded-full object-cover mr-4">
+                        <div>
+                            <h4 class="font-poppins font-semibold text-lg text-pinus">Tim Perusahaan XYZ</h4>
+                            <p class="text-kabut">Semarang</p>
+                        </div>
+                    </div>
+                    <p class="text-kabut italic leading-relaxed">"Venue yang sempurna untuk acara company gathering.
+                        Grand Joglo-nya luas dan atmosfernya sangat mendukung untuk team building."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-20 bg-gradient-to-r from-pinus to-kayu text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="font-poppins font-bold text-4xl mb-6">Rencanakan Liburan Ceria Anda Sekarang!</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto opacity-90">Jangan sia-siakan kesempatan untuk menciptakan kenangan
+                indah bersama keluarga dan teman-teman tercinta</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="https://wa.me/6282215628262"
+                    class="bg-gudel text-pinus font-poppins font-semibold px-8 py-4 rounded-full text-lg hover:bg-yellow-300 transition-colors duration-300 inline-flex items-center justify-center">
+                    <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.106" />
+                    </svg>
+                    Hubungi WhatsApp
+                </a>
+                <a href="kontak.html"
+                    class="bg-transparent border-2 border-gudel text-gudel font-poppins font-semibold px-8 py-4 rounded-full text-lg hover:bg-gudel hover:text-pinus transition-colors duration-300">
+                    Lihat Promo Spesial
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-pinus text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <div class="flex items-center space-x-3 mb-6">
+                        <div class="w-12 h-12 bg-gudel rounded-full flex items-center justify-center">
+                            <span class="text-pinus font-bold text-xl">G</span>
+                        </div>
+                        <div>
+                            <h3 class="font-poppins font-bold text-xl">Gudel Wisata</h3>
+                            <p class="text-sm opacity-80">Baturaden</p>
+                        </div>
+                    </div>
+                    <p class="opacity-90 leading-relaxed">Keceriaan Alam Baturaden dalam Satu Destinasi. Nikmati
+                        pengalaman wisata yang tak terlupakan bersama keluarga tercinta.</p>
+                </div>
+
+                <div>
+                    <h4 class="font-poppins font-semibold text-lg mb-4">Menu Cepat</h4>
+                    <div class="space-y-2">
+                        <a href="homestay.html"
+                            class="block opacity-90 hover:opacity-100 transition-opacity">Homestay</a>
+                        <a href="camping.html" class="block opacity-90 hover:opacity-100 transition-opacity">Camping</a>
+                        <a href="aktivitas.html"
+                            class="block opacity-90 hover:opacity-100 transition-opacity">Aktivitas</a>
+                        <a href="galeri.html" class="block opacity-90 hover:opacity-100 transition-opacity">Galeri</a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="font-poppins font-semibold text-lg mb-4">Kontak</h4>
+                    <div class="space-y-2">
+                        <p class="opacity-90">Dusun II, Karangsalam, Kec. Baturaden, Kabupaten Banyumas, Jawa Tengah 53151</p>
+                        <p class="opacity-90">WhatsApp: +62 822-1562-8262</p>
+                        <p class="opacity-90">Email: gudel.baturaden21@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-white/20 mt-8 pt-8 text-center">
+                <p class="opacity-80">&copy; 2025 Gudel Wisata Baturaden. Semua hak cipta dilindungi.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

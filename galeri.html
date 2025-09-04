@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeri - Gudel Wisata Baturaden</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'pinus': '#2C5F2D',
+                        'krem': '#F5F5DC',
+                        'kayu': '#8B4513',
+                        'gudel': '#FFD700',
+                        'kabut': '#4A4A4A'
+                    },
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                        'inter': ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="font-inter bg-krem">
+    <!-- Navigation -->
+    <div class="container mx-auto px-4">
+        <div class="flex justify-between items-center py-4">
+            <div class="flex items-center space-x-3">
+                <div
+                    class="w-12 h-12 rounded-full flex items-center justify-center border-2 border-green-800 overflow-hidden">
+                    <img src="src/images/logo.png" alt="Gudel Logo" class="w-full h-full object-cover">
+                </div>
+                <div>
+                    <h1 class="font-poppins font-bold text-xl text-pinus">Gudel Wisata</h1>
+                    <p class="text-sm text-kabut">Baturaden</p>
+                </div>
+            </div>
+
+            <!-- Desktop Menu -->
+            <div class="hidden lg:flex items-center space-x-8">
+                <a href="index.html" class="text-kabut hover:text-pinus font-medium">Beranda</a>
+                <div class="relative group">
+                    <button class="text-kabut hover:text-pinus font-medium flex items-center">
+                        Akomodasi
+                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
+                    </button>
+                    <div
+                        class="absolute top-full left-0 w-48 bg-white shadow-lg rounded-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 mt-2">
+                        <a href="homestay.html"
+                            class="block px-4 py-3 text-kabut hover:text-pinus hover:bg-krem">Homestay</a>
+                        <a href="camping.html"
+                            class="block px-4 py-3 text-kabut hover:text-pinus hover:bg-krem">Camping</a>
+                    </div>
+                </div>
+                <a href="aktivitas.html" class="text-kabut hover:text-pinus font-medium">Aktivitas</a>
+                <a href="fasilitas.html" class="text-kabut hover:text-pinus font-medium">Fasilitas Lain</a>
+                <a href="galeri.html" class="text-pinus font-medium border-b-2 border-pinus">Galeri</a>
+                <a href="kontak.html" class="text-kabut hover:text-pinus font-medium">Kontak & Promo</a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button class="lg:hidden" onclick="toggleMobileMenu()">
+                <svg class="w-6 h-6 text-pinus" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+                    </path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="lg:hidden hidden pb-4">
+            <a href="index.html" class="block py-2 text-kabut hover:text-pinus font-medium pl-4">Beranda</a>
+            <div class="py-2">
+                <button onclick="toggleSubmenu()"
+                    class="flex items-center justify-between w-full text-kabut hover:text-pinus font-medium pl-4">
+                    Akomodasi
+                    <svg class="w-4 h-4 mr-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                        </path>
+                    </svg>
+                </button>
+                <div id="submenu" class="hidden pl-8 pt-2">
+                    <a href="homestay.html" class="block py-2 text-kabut hover:text-pinus">Homestay</a>
+                    <a href="camping.html" class="block py-2 text-kabut hover:text-pinus">Camping</a>
+                </div>
+            </div>
+            <a href="aktivitas.html" class="block py-2 text-kabut hover:text-pinus font-medium pl-4">Aktivitas</a>
+            <a href="fasilitas.html" class="block py-2 text-kabut hover:text-pinus font-medium pl-4">Fasilitas
+                Lain</a>
+            <a href="galeri.html" class="block py-2 text-pinus font-medium border-l-4 border-pinus pl-4">Galeri</a>
+            <a href="kontak.html" class="block py-2 text-kabut hover:text-pinus font-medium pl-4">Kontak & Promo</a>
+        </div>
+    </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="bg-pinus text-white py-20">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="font-poppins font-bold text-5xl mb-6">Galeri Gudel Wisata</h1>
+            <p class="text-xl max-w-2xl mx-auto opacity-90">Saksikan keindahan alam Baturaden dan keunikan pengalaman
+                wisata melalui koleksi foto terbaik kami</p>
+        </div>
+    </section>
+
+    <!-- Filter Section -->
+
+
+    <!-- Gallery Grid -->
+    <section class="pb-20 bg-white py-12">
+        <div class="container mx-auto px-4">
+            <div id="gallery-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+
+                <!-- Alam & Pemandangan -->
+                <div class="gallery-item alam group cursor-pointer"
+                    onclick="openModal('src/images/aktivitas.png')">
+                    <div class="relative overflow-hidden rounded-2xl shadow-lg aspect-square">
+                        <img src="src/images/aktivitas.png"
+                            alt="Pemandangan"
+                            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item alam group cursor-pointer"
+                    onclick="openModal('src/images/galery/1.png')">
+                    <div class="relative overflow-hidden rounded-2xl shadow-lg aspect-square">
+                        <img src="src/images/galery/1.png"
+                            alt="Taman"
+                            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item alam group cursor-pointer"
+                    onclick="openModal('src/images/galery/2.png')">
+                    <div class="relative overflow-hidden rounded-2xl shadow-lg aspect-square">
+                        <img src="src/images/galery/2.png"
+                            alt="Sunset"
+                            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item alam group cursor-pointer"
+                    onclick="openModal('src/images/galery/3.png')">
+                    <div class="relative overflow-hidden rounded-2xl shadow-lg aspect-square">
+                        <img src="src/images/galery/3.png"
+                            alt="Bunga"
+                            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Homestay -->
+                <div class="gallery-item homestay group cursor-pointer"
+                    onclick="openModal('src/images/galery/4.png')">
+                    <div class="relative overflow-hidden rounded-2xl shadow-lg aspect-square">
+                        <img src="src/images/galery/4.png"
+                            alt="Homestay"
+                            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item homestay group cursor-pointer"
+                    onclick="openModal('src/images/galery/5.png')">
+                    <div class="relative overflow-hidden rounded-2xl shadow-lg aspect-square">
+                        <img src="src/images/galery/5.png"
+                            alt="Ruang Tamu"
+                            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item homestay group cursor-pointer"
+                    onclick="openModal('src/images/galery/6.png')">
+                    <div class="relative overflow-hidden rounded-2xl shadow-lg aspect-square">
+                        <img src="src/images/galery/6.png"
+                            alt="Kamar Tidur"
+                            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item homestay group cursor-pointer"
+                    onclick="openModal('src/images/galery/7.png')">
+                    <div class="relative overflow-hidden rounded-2xl shadow-lg aspect-square">
+                        <img src="src/images/galery/7.png"
+                            alt="Teras"
+                            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Camping -->
+                <div class="gallery-item camping group cursor-pointer"
+                    onclick="openModal('src/images/galery/8.png')">
+                    <div class="relative overflow-hidden rounded-2xl shadow-lg aspect-square">
+                        <img src="src/images/galery/8.png"
+                            alt="Camping"
+                            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item camping group cursor-pointer"
+                    onclick="openModal('src/images/galery/9.png')">
+                    <div class="relative overflow-hidden rounded-2xl shadow-lg aspect-square">
+                        <img src="src/images/galery/9.png"
+                            alt="Camping Premium"
+                            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item camping group cursor-pointer"
+                    onclick="openModal('src/images/galery/10.png')">
+                    <div class="relative overflow-hidden rounded-2xl shadow-lg aspect-square">
+                        <img src="src/images/galery/10.png"
+                            alt="Api Unggun"
+                            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item camping group cursor-pointer"
+                    onclick="openModal('src/images/galery/11.png')">
+                    <div class="relative overflow-hidden rounded-2xl shadow-lg aspect-square">
+                        <img src="src/images/galery/11.png"
+                            alt="Camping Ground"
+                            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal -->
+    <div id="imageModal" class="fixed inset-0 bg-black/90 backdrop-blur-sm z-50 hidden items-center justify-center p-4">
+        <div class="relative max-w-4xl max-h-full">
+            <button onclick="closeModal()"
+                class="absolute -top-12 right-0 text-white hover:text-gudel transition-colors">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
+                    </path>
+                </svg>
+            </button>
+            <img id="modalImage" src="" alt="" class="max-w-full max-h-[80vh] object-contain rounded-lg">
+            <div
+                class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6 rounded-b-lg">
+                <h3 id="modalTitle" class="text-white font-poppins font-semibold text-xl"></h3>
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-r from-pinus to-kayu text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="font-poppins font-bold text-4xl mb-6">Jadilah Bagian dari Galeri Kami!</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto opacity-90">Kunjungi Gudel Wisata Baturaden dan ciptakan momen
+                berharga yang layak diabadikan</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="https://wa.me/6282215628262"
+                    class="bg-gudel text-pinus font-poppins font-semibold px-8 py-4 rounded-full text-lg hover:bg-yellow-300 transition-colors duration-300 inline-flex items-center justify-center">
+                    <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.106" />
+                    </svg>
+                    Rencanakan Kunjungan
+                </a>
+                <a href="index.html"
+                    class="bg-transparent border-2 border-gudel text-gudel font-poppins font-semibold px-8 py-4 rounded-full text-lg hover:bg-gudel hover:text-pinus transition-colors duration-300">
+                    Kembali ke Beranda
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-pinus text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <div class="flex items-center space-x-3 mb-6">
+                        <div class="w-12 h-12 bg-gudel rounded-full flex items-center justify-center">
+                            <span class="text-pinus font-bold text-xl">G</span>
+                        </div>
+                        <div>
+                            <h3 class="font-poppins font-bold text-xl">Gudel Wisata</h3>
+                            <p class="text-sm opacity-80">Baturaden</p>
+                        </div>
+                    </div>
+                    <p class="opacity-90 leading-relaxed">Keceriaan Alam Baturaden dalam Satu Destinasi. Nikmati
+                        pengalaman wisata yang tak terlupakan bersama keluarga tercinta.</p>
+                </div>
+
+                <div>
+                    <h4 class="font-poppins font-semibold text-lg mb-4">Menu Cepat</h4>
+                    <div class="space-y-2">
+                        <a href="homestay.html"
+                            class="block opacity-90 hover:opacity-100 transition-opacity">Homestay</a>
+                        <a href="camping.html" class="block opacity-90 hover:opacity-100 transition-opacity">Camping</a>
+                        <a href="aktivitas.html"
+                            class="block opacity-90 hover:opacity-100 transition-opacity">Aktivitas</a>
+                        <a href="galeri.html" class="block opacity-90 hover:opacity-100 transition-opacity">Galeri</a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="font-poppins font-semibold text-lg mb-4">Kontak</h4>
+                    <div class="space-y-2">
+                        <p class="opacity-90">Dusun II, Karangsalam, Kec. Baturaden, Kabupaten Banyumas, Jawa Tengah 53151</p>
+                        <p class="opacity-90">WhatsApp: +62 822-1562-8262</p>
+                        <p class="opacity-90">Email: gudel.baturaden21@gmail.com</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-white/20 mt-8 pt-8 text-center">
+                <p class="opacity-80">&copy; 2025 Gudel Wisata Baturaden. Semua hak cipta dilindungi.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script1.js"></script>
+</body>
+
+</html>
